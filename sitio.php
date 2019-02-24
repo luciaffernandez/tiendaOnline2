@@ -54,7 +54,6 @@ if ($_POST['cestaAccion']) {
             $cesta->eliminoProd($codigo);
             break;
         case 'Pagar':
-            header("Location:pagar.php");
             break;
     }
 }

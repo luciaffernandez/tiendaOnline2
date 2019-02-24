@@ -5,29 +5,6 @@ class Cesta {
     private $productos = [];
     private $total;
 
-    //Suma las cantidades de los productos y devuelve el número de productos que contiene la cesta
-    public function contarProductos() {
-        foreach ($this->productos as $producto => $valores) {
-            $suma += $valores[0];
-        }
-        return $suma;
-    }
-
-    //calcula a partir del atributo total el IVA proporcional
-    public function calculoIVA() {
-        $IVA = $this->total * 0.21;
-        return $IVA;
-    }
-
-    //getters de los atributos de la clase
-    public function getProductos() {
-        return $this->productos;
-    }
-
-    public function getTotal() {
-        return $this->total;
-    }
-
     /** Devuelve la cesta con distinto formato según si ya existe o no
      * @return Cesta como objeto o como variable de sesión
      */
