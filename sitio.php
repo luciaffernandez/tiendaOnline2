@@ -84,18 +84,12 @@ function obtenerListado($conexion) {
         $n_corto = $dato['nombre_corto'];
         $precio = $dato['PVP'];
         $codigo = $dato['cod'];
-        $familia = $dato['familia'];
         $listado .= "<form action='sitio.php' method='post'>"
                 . " <input type='submit' value='Añadir' name='cestaAccion'>"
                 . " <input type='hidden' value='$precio' name='precio'>"
-                . " <input type='hidden' value='$codigo' name='codigo'>";
-        if ($familia === "ORDENA") {
-            $listado .= "<a href='ordenador.php'> " . $n_corto . " - " . $precio . "</a>"
-                    . "</form>";
-        } else {
-            $listado .= "  " . $n_corto . " - " . $precio
-                    . "</form>";
-        }
+                . " <input type='hidden' value='$codigo' name='codigo'>"
+                . "  " . $n_corto . " - " . $precio
+                . "</form>";
     }
     return $listado;
 }
