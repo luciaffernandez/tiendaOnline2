@@ -10,7 +10,6 @@
             <div id="encabezado">
                 <h1>Listado de productos</h1>
             </div>
-            {include file="cesta.tpl"}
             {include file="listadoProductos.tpl"}
             <div id="pie">
                 <form action="login.php" method="POST">

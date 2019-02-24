@@ -28,41 +28,6 @@ if (isset($_SESSION['user']) && isset($_SESSION['pass'])) {
     header("Location:login.php?error");
 }
 
-//creamos o recogemos cesta
-$cesta = Cesta::generaCesta();
-
-//recojo el contenido de la cesta con los productos que vayamos añadiendo y lo mostramos en la plantilla
-$contenidoCesta = $cesta->mostrarCesta();
-$smarty->assign('contenidoCesta', $contenidoCesta);
-
-//guardamos el estado de la cesta
-$cesta->guardaCesta();
-
-//los botones relacionados con la cesta ejecutan las siguiente acciones
-if ($_POST['cestaAccion']) {
-    //recogemos los datos de los productos
-    $codigo = $_POST['codigo'];
-    $precio = $_POST['precio'];
-    switch ($_POST['cestaAccion']) {
-        case 'Añadir':
-            $cesta->nuevoProd($precio, $codigo);
-            break;
-        case 'Vaciar':
-            break;
-        case 'Eliminar':
-            break;
-        case 'Pagar':
-            break;
-    }
-}
-
-
-$cesta->guardaCesta();
-
-//recojo el resultado de la funcion que crea el html de la cesta y la muestra
-$contenidoCesta = $cesta->mostrarCesta();
-$smarty->assign('contenidoCesta', $contenidoCesta);
-
 //recojo el resultado de la funcion que creara la lista de Productos y lo muestra
 $listado = obtenerListado($conexion);
 $smarty->assign('listado', $listado);
