@@ -45,11 +45,6 @@ if (isset($_POST['enviar'])) {
     if (isset($_GET['error'])) {
         $error = "No has iniciado sesión";
     }
-    //si se pulsa el boton desconectar del sitio se muestra el mensaje y destruimos la sesion
-    if (isset($_POST['desconectar'])) {
-        session_destroy();
-        $error = "Te has desconectado";
-    }
     $smarty->assign('error', $error);
     //Mostramos plantilla
     $smarty->display('login.tpl');

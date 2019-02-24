@@ -11,11 +11,6 @@
                 <h1>Listado de productos</h1>
             </div>
             {include file="listadoProductos.tpl"}
-            <div id="pie">
-                <form action="login.php" method="POST">
-                    <input type="submit" value="Desconectar" name="desconectar"/>
-                </form>
-            </div>
         </div>
     </body>
 </html>
