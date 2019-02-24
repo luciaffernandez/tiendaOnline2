@@ -48,10 +48,8 @@ if ($_POST['cestaAccion']) {
             $cesta->nuevoProd($precio, $codigo);
             break;
         case 'Vaciar':
-            $cesta->vacia();
             break;
         case 'Eliminar':
-            $cesta->eliminoProd($codigo);
             break;
         case 'Pagar':
             break;

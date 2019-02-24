@@ -55,18 +55,6 @@ class Cesta {
         }
     }
 
-    /** Función que comprueba la cantidad de un producto que hay en el array productos 
-     * de la cesta y si es mayor que 1 le resta 1, si no el valor mínimo es 1 asique lo elimina
-     * @param type $codigo
-     */
-    public function eliminoProd($codigo) {
-        if ($this->productos[$codigo][0] > 1) {
-            $this->productos[$codigo][0] --;
-        } else {
-            unset($this->productos[$codigo]);
-        }
-    }
-
     /** calcula el precio total a pagar cogiendo los datos del array productos
      * @return type
      */
@@ -82,11 +70,6 @@ class Cesta {
     //guardamos cesta en una variable de sesion
     public function guardaCesta() {
         $_SESSION['cesta'] = $this;
-    }
-
-    //vaciamos cesta
-    public function vacia() {
-        unset($this->productos);
     }
 
 }
